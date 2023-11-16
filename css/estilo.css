@@ -1,0 +1,267 @@
+body 
+{
+    font-family: arial;
+    background-attachment: fixed;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima del body pa ocupar tota la finestra (Pa que el footer no se quede a mija pantalla si $central es un fitxer sense contingut o menut). */
+
+}
+
+header 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #BFD8D2;;
+    height: 120px;
+    margin-bottom: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    font-family: "Times New Roman", Times, serif;
+    max-width: 100%;
+
+}
+
+footer 
+{
+    position:fixed;
+    bottom:0;
+    clear: both;
+    padding: 5px;
+    text-align: center;
+    background-color: #BFD8D2;
+    font-size: 130%;
+    width: 100%;
+}
+
+nav 
+{
+    position: fixed;
+    top: 120px; /* Buit damunt del tamany del header */
+    clear: both;
+    margin-bottom: 10px;
+    padding: 4px;
+    text-align: center;
+    background-color: #A9B7C0;
+    font-size: 130%;
+    font-family: Calibri, sans-serif;
+    width: 100%;
+}
+
+section 
+{
+    width: 45%;
+    min-width: 300px;
+    margin: 0px 0px 15px 0px;
+    padding: 15px 5px 5px 5px;
+    background-color: beige;
+    box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, .75);
+}
+
+h1 
+{
+    font-size: 220%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+h2 
+{
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#logo 
+{
+    float: left;
+    max-height: 120px;
+    width:auto;
+}
+
+#eslogan 
+{
+    float: left;
+    margin: 1% 1%;
+    color: #FEDCD2;
+    text-shadow: 2px 2px 4px #000; /* Sombrejat*/
+}
+#eslogan2 
+{
+    float: left;
+    color: #914bb9;
+}
+
+#registro 
+{
+    position: absolute;
+    top: 5px;
+    right: 10%;
+}
+
+table 
+{
+    background-color:#FFFFE0;
+    border-collapse:collapse;
+    color:#000;
+    font-size:18px;
+    border:1px;
+    margin: 10px auto; 
+}
+
+th 
+{ 
+    background-color:#BDB76B; 
+}
+
+td, th 
+{ 
+    border: 1px solid;padding:1px;width: 10%; 
+}
+
+td 
+{ 
+    border-bottom:1px dotted #BDB76B; 
+}
+
+#registro a:hover 
+{
+    color: blue;
+}
+
+nav a 
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: #FEDCD2;
+    text-shadow: 2px 2px 4px #000;
+}
+
+nav a:hover 
+{
+    color: #aaaaaa;
+}
+
+nav li 
+{
+    display: inline;
+    padding: 0 40px 0 0;
+}
+
+section#blog
+{
+    float: right;
+}
+
+.valoracion-usuario 
+{
+    font-style: italic;
+}
+
+.botonleermas 
+{
+    font-size: 80%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.izq 
+{
+    float: left;
+    margin-top: 0px;
+    text-align: left;
+    font-family: "Brush Script MT", cursive;
+}
+
+.der 
+{
+    font-family: "Brush Script MT", cursive;
+    margin-top: 0px;
+    text-align: right;
+}
+
+.time
+{
+    font-family: "Brush Script MT", cursive;
+}
+
+header>img
+{
+    width:15%
+}
+
+img
+{
+    max-width: 50%;
+}
+
+main 
+{
+    margin-top: 195px;
+    width: 85%;
+    display:flex;
+    flex-direction: column; 
+    text-align: center;
+    padding-bottom: 60px; /* espai pa no tapar el contingut en el footer. */
+    overflow-y: auto; /* Barra de desplaçament si el tamany es mes gran que la finestra. */
+    align-items: center;
+}
+
+section 
+{
+    width: 85%;
+    background-color: #FFF4E1; 
+    box-shadow: 5px 5px 5px #888888; /* Sombrejat a la dreta i baix */
+    padding: 20px; /* Espai intern en les seccions */
+    text-align: center;
+}
+
+.news-section 
+{
+    margin-top: 195px;
+    margin-bottom: 20px;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%; 
+    background-color: #FEDCD2; 
+    overflow-y: scroll; 
+    padding-bottom: 60px; /* Espai baix pal footer. */
+}
+
+ul 
+{
+    list-style: none; /* Elimina els puntets que ixen a les llistes, pa que no me ixquen en els sections de home */
+}
+
+li 
+{
+    margin-bottom: 10px; /* espai entre els items de les llistes */
+}
+
+aside p
+{
+    text-align:center;
+}
+
+.galeria 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Necessari pa poder fer 3 columnes */
+    padding-bottom: 60px;
+    gap: 10px;
+}
+
+.item img 
+{
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%; /* el ample de la imatge serà el 100% del contenidor (quadricula) */
+  height: auto; /* mante la proporcio de la imatge pa que no se deforme al  nomes controlar el ample */
+}
