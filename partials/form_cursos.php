@@ -1,11 +1,11 @@
 <main>
     <h1>Afegir Curs</h1>
-    <form id="curs-form">
+    <form id="curs-form" method="post" action="?action=registrar">
         <label for="codi">Codi:</label>
         <input type="text" id="codi" name="codi" required><br>
 
         <label for="descripcio">Descripció:</label>
-        <input type="text" id="descripcio" name="descripcin" required><br>
+        <input type="text" id="descripcio" name="descripcio" required><br>
 
         <label for="max_alumnes">Nombre Màxim d'Alumnes:</label>
         <input type="number" id="max_alumnes" name="max_alumnes" required min="1"><br>

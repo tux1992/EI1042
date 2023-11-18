@@ -4,9 +4,6 @@
 			<a href="?action=home">Home</a>
 		</li>
 		<li>
-			<a href="?action=form_register">Registre</a>
-		</li>
-		<li>
 			<a href="?action=list">Llistar</a>
 		</li>
 
@@ -18,9 +15,6 @@
 		</li>
 		<li>
 			<a href="?action=qui_som">Qui som?</a>
-		</li>
-		<li>
-			<a href="?action=tablas">Cursos i activitats</a>
 		</li>
 		<li>
 			<a href="?action=afegirCurs">Afegir Curs</a>

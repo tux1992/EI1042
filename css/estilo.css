@@ -83,6 +83,17 @@ h2
     width:auto;
 }
 
+#loguear 
+{
+    float: right;
+}
+
+#botonLogin 
+{
+    float: right;
+}
+
+
 #eslogan 
 {
     float: left;
@@ -109,7 +120,7 @@ table
     border-collapse:collapse;
     color:#000;
     font-size:18px;
-    border:1px;
+    border:1px solid black;
     margin: 10px auto; 
 }
 
