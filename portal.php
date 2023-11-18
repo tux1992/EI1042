@@ -95,9 +95,32 @@
                 }
                 $central = "/partials/home.php";
                 break;
+            case "modificar":
+                $dic = carregar_dades("./recursos/cursos.json");
+                $curs_nom = $_REQUEST["codi"];
+                $curs_descripcio = $_REQUEST["descripcio"];
+                $curs_alumnes = $_REQUEST["max_alumnes"];
+                $curs_vacants = $_REQUEST["vacants"];
+                $curs_preu = $_REQUEST["preu"];
+                $nou_curs = [$curs_descripcio, $curs_alumnes, $curs_vacants, $curs_preu];
+             
+                $dic[$curs_nom] = $nou_curs;
+                guarda_dades($dic, "./recursos/cursos.json");
+                
+                $central = "/partials/llistar_admin.php";
+                break;
             case "list":
                 $central = "/partials/llistar.php";
-                break;                
+                break;  
+            case 'list_admin':
+                $central = "/partials/llistar_admin.php";
+                break;              
+            case "borrar":
+                $dic = carregar_dades("./recursos/cursos.json");
+                unset($dic[$_REQUEST["curso"]]);
+                guarda_dades($dic, "./recursos/cursos.json");
+                $central = "/partials/llistar_admin.php";
+                break;
             default:
                 $error_msg = "Acció no permesa";
                 $central = "/partials/home.php";

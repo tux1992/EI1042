@@ -3,9 +3,16 @@
 		<li>
 			<a href="?action=home">Home</a>
 		</li>
-		<li>
-			<a href="?action=list">Llistar</a>
-		</li>
+		<?php
+                if(autorizacion() == "admin")
+                {
+                    echo '<li><a href="?action=list_admin">Llistar</a></li>';
+                }
+                else
+                {
+                    echo '<li><a href="?action=list">Llistar</a></li>';
+                }          
+		?>  
 
 		<li>
 			<a href="?action=modify">Modificar</a>
@@ -19,7 +26,7 @@
 		<li>
 			<a href="?action=afegirCurs">Afegir Curs</a>
 		</li>
-		<li>
+		
 		<li>
 			<a href="?action=galeria">Galeria</a>
 		</li>

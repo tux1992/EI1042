@@ -9,7 +9,7 @@
             <th>Descripció</th>
             <th>Nombre Màxim d'Alumnes</th>
             <th>Places Vacants</th>
-            <th>Preu Trimestre</th>
+            <th>Preu Trimestre</th>            
         </tr>
     <?php
         foreach ($dic as $codi => $curs) 
