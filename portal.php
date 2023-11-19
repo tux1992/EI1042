@@ -13,8 +13,8 @@
  **/
     require_once(dirname(__FILE__)."/partials/lib_utilidades.php");
     require_once(dirname(__FILE__)."/partials/sessio.php");
-    //require_once(dirname(__FILE__)."/partials/header.php");
-    //require_once(dirname(__FILE__)."/partials/menu.php");
+    require_once(dirname(__FILE__)."/partials/header.php");
+    require_once(dirname(__FILE__)."/partials/menu.php");
     
     
     
@@ -121,11 +121,15 @@
                 guarda_dades($dic, "./recursos/cursos.json");
                 $central = "/partials/llistar_admin.php";
                 break;
-            case "foto_upload":
-                $destino = "/opt/lampp/htdocs/EI1042/portal/media/fotos";
+            case "afegirFoto":                
+                $central="/partials/form_foto.php";
+                break;
+            case "foto_upload":                
                 $foto = "foto_cliente";
                 $nomFoto = "tmp_name";
-                move_uploaded_file($_FILES[$foto][$nomFoto],$destino);
+                $fileName = $_FILES[$foto]["name"];
+                $destino = "/opt/lampp/htdocs/EI1042/media/fotos/$fileName";
+                move_uploaded_file($_FILES[$foto][$nomFoto], $destino);
                 print_r($_FILES);
                 $central="/partials/form_foto.php";
                 break;

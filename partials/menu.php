@@ -30,7 +30,7 @@
 			<a href="?action=galeria">Galeria</a>
 		</li>
 		<li>
-		    <a href="?action=foto_upload">FormFoto</a>
+		    <a href="?action=afegirFoto">FormFoto</a>
 		</li>
 		<li>
 			<a href="?action=privacitat">Privacitat</a>
