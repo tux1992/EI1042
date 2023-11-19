@@ -16,9 +16,10 @@
 		<li>
 			<a href="?action=modify">Modificar</a>
 		</li>
-		<li>
+		<!-- <li>
 			<a href="../B_1/holaMundo.php">HolaMundo</a>
 		</li>
+		-->
 		<li>
 			<a href="?action=qui_som">Qui som?</a>
 		</li>

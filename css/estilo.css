@@ -234,7 +234,6 @@ section
 
 .news-section 
 {
-    display:none;
     margin-top: 195px;
     margin-bottom: 20px;
     width: 15%;
@@ -270,9 +269,40 @@ aside p
     gap: 10px;
 }
 
+.gallery-section 
+{
+    position:fixed;
+    bottom:0;
+    clear: both;
+    padding: 5px;
+    text-align: center;
+    background-color: #BFD8D2;
+    width: 100%;
+    display: grid;
+    padding-bottom: 60px;
+}
+
+ul .gallery-list
+{
+    display:inline list-item;
+}
+
+li .gallery-list
+{
+    display:inline list-item;
+}
+
 .item img 
 {
   max-width: 100%;
+  max-height: 100%;
+  width: 100%; /* el ample de la imatge serà el 100% del contenidor (quadricula) */
+  height: auto; /* mante la proporcio de la imatge pa que no se deforme al  nomes controlar el ample */
+}
+
+li img 
+{
+  max-width: 10%;
   max-height: 100%;
   width: 100%; /* el ample de la imatge serà el 100% del contenidor (quadricula) */
   height: auto; /* mante la proporcio de la imatge pa que no se deforme al  nomes controlar el ample */

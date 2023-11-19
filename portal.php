@@ -81,12 +81,21 @@
                 $curs_alumnes = $_REQUEST["max_alumnes"];
                 $curs_vacants = $_REQUEST["vacants"];
                 $curs_preu = $_REQUEST["preu"];
+                              
+                $foto = "foto_cliente";
+                $nomFoto = "tmp_name";
+                $fileName = $_FILES[$foto]["name"];
+                $destino = "/opt/lampp/htdocs/EI1042/media/fotos/$fileName";
+                                
                 $nou_curs = [$curs_descripcio, $curs_alumnes, $curs_vacants, $curs_preu];
-                
+                                                
                 if(!isset($dic[$curs_nom]))
                 {
                     echo "curs ".$curs_nom." no existeix";
                     $dic[$curs_nom] = $nou_curs;
+                    $dic[$curs_nom]["nom_imagen"] = $fileName;
+                    $dic[$curs_nom]["foto_cliente"] = $destino;
+                    move_uploaded_file($_FILES[$foto][$nomFoto], $destino);
                     guarda_dades($dic, "./recursos/cursos.json");
                 }
                 else
@@ -103,6 +112,12 @@
                 $curs_vacants = $_REQUEST["vacants"];
                 $curs_preu = $_REQUEST["preu"];
                 $nou_curs = [$curs_descripcio, $curs_alumnes, $curs_vacants, $curs_preu];
+                
+                if(isset($curs_nom["nom_imagen"]))
+                {                    
+                    $nou_curs["nom_imagen"] = $curs_nom["nom_imagen"];
+                    $nou_curs["foto_cliente"] = $curs_nom["foto_cliente"];
+                }
              
                 $dic[$curs_nom] = $nou_curs;
                 guarda_dades($dic, "./recursos/cursos.json");
@@ -144,8 +159,9 @@
             require_once(dirname(__FILE__)."/partials/error.php");
         }
     require_once(dirname(__FILE__).$central);
-    //require_once(dirname(__FILE__)."/partials/aside_content.php");
-    //echo "<br />",$action,"<br />",dirname(__FILE__),"<br />";
-   //require_once(dirname(__FILE__)."/partials/footer.php");
-   require_once(dirname(__FILE__)."/partials/menu.php");
+    require_once(dirname(__FILE__)."/partials/aside_content.php");
+    echo "<br />",$action,"<br />",dirname(__FILE__),"<br />";
+    require_once(dirname(__FILE__)."/partials/aside_footer.php");
+    require_once(dirname(__FILE__)."/partials/footer.php");
+    require_once(dirname(__FILE__)."/partials/menu.php");
 ?>
