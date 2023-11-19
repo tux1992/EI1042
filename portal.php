@@ -13,8 +13,8 @@
  **/
     require_once(dirname(__FILE__)."/partials/lib_utilidades.php");
     require_once(dirname(__FILE__)."/partials/sessio.php");
-    require_once(dirname(__FILE__)."/partials/header.php");
-    require_once(dirname(__FILE__)."/partials/menu.php");
+    //require_once(dirname(__FILE__)."/partials/header.php");
+    //require_once(dirname(__FILE__)."/partials/menu.php");
     
     
     
@@ -121,6 +121,14 @@
                 guarda_dades($dic, "./recursos/cursos.json");
                 $central = "/partials/llistar_admin.php";
                 break;
+            case "foto_upload":
+                $destino = "/opt/lampp/htdocs/EI1042/portal/media/fotos";
+                $foto = "foto_cliente";
+                $nomFoto = "tmp_name";
+                move_uploaded_file($_FILES[$foto][$nomFoto],$destino);
+                print_r($_FILES);
+                $central="/partials/form_foto.php";
+                break;
             default:
                 $error_msg = "Acció no permesa";
                 $central = "/partials/home.php";
@@ -132,7 +140,8 @@
             require_once(dirname(__FILE__)."/partials/error.php");
         }
     require_once(dirname(__FILE__).$central);
-    require_once(dirname(__FILE__)."/partials/aside_content.php");
+    //require_once(dirname(__FILE__)."/partials/aside_content.php");
     //echo "<br />",$action,"<br />",dirname(__FILE__),"<br />";
-    require_once(dirname(__FILE__)."/partials/footer.php");
+   //require_once(dirname(__FILE__)."/partials/footer.php");
+   require_once(dirname(__FILE__)."/partials/menu.php");
 ?>

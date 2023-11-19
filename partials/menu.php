@@ -13,7 +13,6 @@
                     echo '<li><a href="?action=list">Llistar</a></li>';
                 }          
 		?>  
-
 		<li>
 			<a href="?action=modify">Modificar</a>
 		</li>
@@ -29,6 +28,9 @@
 		
 		<li>
 			<a href="?action=galeria">Galeria</a>
+		</li>
+		<li>
+		    <a href="?action=foto_upload">FormFoto</a>
 		</li>
 		<li>
 			<a href="?action=privacitat">Privacitat</a>

@@ -234,6 +234,7 @@ section
 
 .news-section 
 {
+    display:none;
     margin-top: 195px;
     margin-bottom: 20px;
     width: 15%;
