@@ -85,7 +85,7 @@
                 $foto = "foto_cliente";
                 $nomFoto = "tmp_name";
                 $fileName = $_FILES[$foto]["name"];
-                $destino = "/opt/lampp/htdocs/EI1042/media/fotos/$fileName";
+                $destino = "./media/fotos/$fileName";
                                 
                 $nou_curs = [$curs_descripcio, $curs_alumnes, $curs_vacants, $curs_preu];
                                                 
@@ -143,7 +143,7 @@
                 $foto = "foto_cliente";
                 $nomFoto = "tmp_name";
                 $fileName = $_FILES[$foto]["name"];
-                $destino = "/opt/lampp/htdocs/EI1042/media/fotos/$fileName";
+                $destino = "./media/fotos/$fileName";
                 move_uploaded_file($_FILES[$foto][$nomFoto], $destino);
                 //print_r($_FILES);
                 $central="/partials/form_foto.php";
