@@ -21,14 +21,14 @@
     $referer = $_SERVER["HTTP_REFERER"];
     if(isset($_REQUEST["action"]) and (!isset($_SERVER["HTTP_REFERER"]) or substr($referer, 0, 16) != "http://localhost"))
     {
-        echo "referer no valido";
+        //echo "referer no valido";
         $error_msg = "Accés directe no permés";
         $central = "/partials/home.php";
     }
 
     else
     {
-        echo "referer valido";
+        //echo "referer valido";
         $action = (array_key_exists('action', $_REQUEST)) ? $_REQUEST["action"] : "home";
         
         switch ($action) 
@@ -91,7 +91,7 @@
                                                 
                 if(!isset($dic[$curs_nom]))
                 {
-                    echo "curs ".$curs_nom." no existeix";
+                    //echo "curs ".$curs_nom." no existeix";
                     $dic[$curs_nom] = $nou_curs;
                     $dic[$curs_nom]["nom_imagen"] = $fileName;
                     $dic[$curs_nom]["foto_cliente"] = $destino;
@@ -145,7 +145,7 @@
                 $fileName = $_FILES[$foto]["name"];
                 $destino = "/opt/lampp/htdocs/EI1042/media/fotos/$fileName";
                 move_uploaded_file($_FILES[$foto][$nomFoto], $destino);
-                print_r($_FILES);
+                //print_r($_FILES);
                 $central="/partials/form_foto.php";
                 break;
             default:
@@ -160,7 +160,7 @@
         }
     require_once(dirname(__FILE__).$central);
     require_once(dirname(__FILE__)."/partials/aside_content.php");
-    echo "<br />",$action,"<br />",dirname(__FILE__),"<br />";
+    //echo "<br />",$action,"<br />",dirname(__FILE__),"<br />";
     require_once(dirname(__FILE__)."/partials/aside_footer.php");
     require_once(dirname(__FILE__)."/partials/footer.php");
     require_once(dirname(__FILE__)."/partials/menu.php");

@@ -1,6 +1,6 @@
 <main>
     <p/>
-        <?php print_r($_SESSION);?>
+        <?php //print_r($_SESSION);?>
 	<h2>Benvinguts al Col·legi Sensal</h2>
 	 <p>On la excelència es troba amb l'educació</p>
 	      <img src="media/cpSensal.png"></img>
