@@ -91,7 +91,6 @@
                                                 
                 if(!isset($dic[$curs_nom]))
                 {
-                    //echo "curs ".$curs_nom." no existeix";
                     $dic[$curs_nom] = $nou_curs;
                     $dic[$curs_nom]["nom_imagen"] = $fileName;
                     $dic[$curs_nom]["foto_cliente"] = $destino;
@@ -159,9 +158,8 @@
             require_once(dirname(__FILE__)."/partials/error.php");
         }
     require_once(dirname(__FILE__).$central);
-    require_once(dirname(__FILE__)."/partials/aside_content.php");
+    //require_once(dirname(__FILE__)."/partials/aside_content.php");
     //echo "<br />",$action,"<br />",dirname(__FILE__),"<br />";
     require_once(dirname(__FILE__)."/partials/aside_footer.php");
     require_once(dirname(__FILE__)."/partials/footer.php");
-    require_once(dirname(__FILE__)."/partials/menu.php");
 ?>
