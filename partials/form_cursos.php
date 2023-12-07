@@ -1,5 +1,6 @@
 <main>
     <h1>Afegir Curs</h1>
+    <script type="text/javascript" src="./recursos/js/scripts.js"></script>
     <form id="curs-form" method="post" action="?action=registrar" enctype="multipart/form-data">
         <label for="codi">Codi:</label>
         <input type="text" id="codi" name="codi" required><br>

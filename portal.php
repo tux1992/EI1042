@@ -147,6 +147,24 @@
                 //print_r($_FILES);
                 $central="/partials/form_foto.php";
                 break;
+            case "firma_upload":                
+                $foto = "foto";
+                $nomFoto = "tmp_name";
+                $fileName = $_FILES[$foto]["name"];
+                $destino = "./media/firmas/$fileName";
+                move_uploaded_file($_FILES[$foto][$nomFoto], $destino);
+                //print_r($_FILES);
+                $central="/partials/firma_online.php";
+                break;
+            case "ahorcado":
+                $central="/partials/ahorcado.php";
+                break;
+            case "quadrats":
+                $central="/partials/quadrats.php";
+                break;
+            case "firmar":
+                $central="/partials/firma_online.php";
+                break;
             default:
                 $error_msg = "Acció no permesa";
                 $central = "/partials/home.php";

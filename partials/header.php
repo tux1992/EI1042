@@ -3,11 +3,10 @@
 
     <head>
 	    <meta charset="UTF-8">
-	    <title>Portal Pruebas </title>
+	    <title>Col·legiSensal</title>
 	    <meta name="Author" content="AlumnoXXX">
 	    <link rel="stylesheet" href="./css/estilo.css" type="text/css">
 	    <link rel="icon" type="image/ico" href="./media/icon.png">
-
     </head>
 
 

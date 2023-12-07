@@ -307,3 +307,28 @@ li img
   width: 100%; /* el ample de la imatge serà el 100% del contenidor (quadricula) */
   height: auto; /* mante la proporcio de la imatge pa que no se deforme al  nomes controlar el ample */
 }
+
+#ahorcado 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+canvas 
+{
+    border: 2px solid #333;
+}
+
+#resultado 
+{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#letrasIncorrectas 
+{
+    font-size: 18px;
+}

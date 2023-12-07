@@ -34,6 +34,15 @@
 		    <a href="?action=afegirFoto">FormFoto</a>
 		</li>
 		<li>
+			<a href="?action=ahorcado">JocAhordado</a>
+		</li>
+		<li>
+			<a href="?action=quadrats">JocQuadrats</a>
+		</li>
+		<li>
+			<a href="?action=firmar">Firmar</a>
+		</li>
+		<li>
 			<a href="?action=privacitat">Privacitat</a>
 		</li>
 	</ul>
