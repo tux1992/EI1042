@@ -26,7 +26,12 @@
 		<li>
 			<a href="?action=afegirCurs">Afegir Curs</a>
 		</li>
-		
+		<?php
+                if(autorizacion() == "client")
+                {
+                    echo '<li><a href="?action=matricula">Matricula Curs</a></li>';
+                }          
+		?>  
 		<li>
 			<a href="?action=galeria">Galeria</a>
 		</li>

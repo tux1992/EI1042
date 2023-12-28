@@ -75,12 +75,12 @@ function verificarFinJuego()
 {
     if (intentosFallidos === maxIntentos) 
     {
-        resultadoElement.textContent = '¡Perdiste! La palabra era: ' + palabraSeleccionada;
+        resultadoElement.textContent = '¡Has perdut! La paraula era: ' + palabraSeleccionada;
         mostrarReiniciarButton();
     } 
     else if (!palabraActual.includes('_'))
     {
-        resultadoElement.textContent = '¡Ganaste!';
+        resultadoElement.textContent = '¡Has guanyat!';
         mostrarReiniciarButton();
     }
 }

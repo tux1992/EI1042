@@ -232,7 +232,7 @@ section
     text-align: center;
 }
 
-.news-section 
+.temps 
 {
     margin-top: 195px;
     margin-bottom: 20px;
@@ -259,6 +259,16 @@ li
 aside p
 {
     text-align:center;
+}
+
+aside table
+{
+    background-color: #FEDCD2; 
+}
+
+aside table th
+{
+    background-color:#FEDCD2; 
 }
 
 .galeria 
@@ -303,7 +313,7 @@ li .gallery-list
 li img 
 {
   max-width: 10%;
-  max-height: 100%;
+  max-height: 80px;
   width: 100%; /* el ample de la imatge serà el 100% del contenidor (quadricula) */
   height: auto; /* mante la proporcio de la imatge pa que no se deforme al  nomes controlar el ample */
 }
@@ -331,4 +341,10 @@ canvas
 #letrasIncorrectas 
 {
     font-size: 18px;
+}
+
+#catImg
+{
+    width: 100%;
+    max-width: 100%;
 }

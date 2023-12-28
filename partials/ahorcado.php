@@ -4,7 +4,7 @@
     </div>
     </br>
     <div>
-        <h2>Letras incorrectas: <span id="letrasIncorrectas"></span></h2>
+        <h2>Lletres incorrectes: <span id="letrasIncorrectas"></span></h2>
     </div>
     <div id="resultado"></div>
     <div>
