@@ -1,6 +1,7 @@
 <main>
     <h1>Matrícula en Curs</h1>
-    <form id="curs-form" method="post" enctype="multipart/form-data">
+    <div id="mensaje"></div>
+    <form id="curs-form" method="post">
         <label for="codiCurs">Curs:</label>
         <select name="id_curs" id="codiCurs"></select>
         <label for="vacants">Vacants:</label>
@@ -50,25 +51,35 @@
         
         var matriculaCurs = document.getElementById("curs-form");
         matriculaCurs.addEventListener
-        ('submit',async function()
+        ('submit', async function(event)
             {                
+                event.preventDefault();
+                
                 var curs_select = document.getElementById("codiCurs");
                 var codi = curs_select.value;
                 const response = await fetch('http://localhost/EI1042/portal/portal.php?action=matriculaCursos&pet=partial&curso='+codi, {method: 'POST', credentials: 'include'});
                 const res_matricula = await response.json();
-                
+                console.log(res_matricula);
                 if(res_matricula.matricula == 'correcta')
                 {
-                    alert("Matrícula correcta!\n" + "Usuari: " + res_matricula.usuari + " Curs: " + res_matricula.curs);
+                    var div_form = document.getElementById("curs-form");
+                    div_form.style.visibility = "hidden";
+
+                    const mensaje = document.createElement("p");
+                    const node = document.createTextNode(res_matricula.mensaje);
+                    mensaje.appendChild(node);
+                    
+                    const div_mensaje = document.getElementById("mensaje");
+                    div_mensaje.appendChild(mensaje);
+                    //alert("Matrícula correcta!\n" + "Usuari: " + res_matricula.usuari + " Curs: " + res_matricula.curs);
                 }
                 else
                 {
-                    alert("Matrícula incorrecta!\n" + "Usuari: " + res_matricula.usuari + " Curs: " + res_matricula.curs);
-                }
+                    alert("Matrícula incorrecta!\n" + res_matricula.mensaje);
+                }                
             },
             false
-        );
-        
+        );        
         
     </script>
 </main>

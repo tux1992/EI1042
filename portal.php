@@ -14,7 +14,7 @@
     require_once(dirname(__FILE__)."/partials/lib_utilidades.php");
     require_once(dirname(__FILE__)."/partials/sessio.php");    
     //Si s'indica que és una petició 'partial' tornem un json, en cas contrari carreguem tot el HTML
-    if($_REQUEST["pet"] == "partial")
+    if(isset($_REQUEST["pet"]) and $_REQUEST["pet"] == "partial")
     {                
         $action = $_REQUEST["action"];
         switch($action)
@@ -33,7 +33,37 @@
                 break;
             case "matriculaCursos":
                 header('Content-Type: application/json; charset=utf-8');
-                echo json_encode(array('matricula'=>'correcta', 'curs' => $_REQUEST["curso"], 'usuari' => $_SESSION["user"]));
+                $dic = carregar_dades("./recursos/matriculats.json");
+                $dic_cursos = carregar_dades("./recursos/cursos.json");
+                $matriculats = $dic[$_REQUEST["curso"]];
+                $encontrado = false;
+                foreach($matriculats as $alumne)
+                {
+                    if($alumne[0] == $_SESSION["user"])
+                    {
+                        $encontrado = true;                                
+                    }
+                }
+                if(!$encontrado)
+                {
+                    array_push($matriculats, array($_SESSION["user"], $_SESSION["user_name"]));
+                    $dic[$_REQUEST["curso"]] = $matriculats;
+                    
+                    $curs = $dic_cursos[$_REQUEST["curso"]];
+                    $vacants = intval($curs[2]);
+                    $vacants = strval($vacants-1);
+                    $curs[2] = $vacants;                    
+                    $dic_cursos[$_REQUEST["curso"]] = $curs;
+                    guarda_dades($dic, "./recursos/matriculats.json");
+                    guarda_dades($dic_cursos, "./recursos/cursos.json");
+                    $mensaje = "Alumne ".$_SESSION["user"]." matriculat al curs ".$_REQUEST["curso"];
+                    echo json_encode(array('matricula'=>'correcta', 'mensaje' => $mensaje));                                        
+                }
+                else
+                {
+                    $mensaje = "L'alumne ".$_SESSION["user"]." ja està matricular al curs ".$_REQUEST["curso"];
+                    echo json_encode(array('matricula'=>'incorrecta', 'mensaje' => $mensaje));    
+                }
                 break;
             default:
                 echo json_encode(array('mensaje'=>'error'));
@@ -84,15 +114,15 @@
                     }
                     break;                
                 case "matricula":
-                    //if(autorizacion() == "client")
-                    //{
+                    if(autorizacion() == "client")
+                    {
                         $central = "/partials/form_matricula.php";
-                    /*}
+                    }
                     else
                     {
                         $error_msg = "Accés no permés. Sols els usuaris client poden matricularse als cursos.";
                         $central = "/partials/home.php";
-                    }*/
+                    }
                     break;
                 case "login":
                     $central = "/partials/form_login.php";
@@ -134,6 +164,10 @@
                         $dic[$curs_nom]["foto_cliente"] = $destino;
                         move_uploaded_file($_FILES[$foto][$nomFoto], $destino);
                         guarda_dades($dic, "./recursos/cursos.json");
+                        
+                        $dic = carregar_dades("./recursos/matriculats.json");
+                        $dic[$curs_nom] = array();
+                        guarda_dades($dic, "./recursos/matriculats.json");
                     }
                     else
                     {

@@ -28,8 +28,8 @@
         {
             const response = await fetch('https://www.el-tiempo.net/api/json/v1/provincias/12/municipios/12040/weather');
             const names = await response.json();
-            console.log(names);
-            console.log(names.prediccion.dia[0]);
+            //console.log(names);
+            //console.log(names.prediccion.dia[0]);
             const dia = names.prediccion.dia[0];
 
             var row = document.getElementById("tmax");
@@ -58,7 +58,7 @@
         {
             const response = await fetch('https://api.thecatapi.com/v1/images/search');
             const names = await response.json();
-            console.log(names[0]);
+            //console.log(names[0]);
             var imagen = document.getElementById("catImg");
             imagen.src = names[0].url;
         }

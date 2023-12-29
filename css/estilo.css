@@ -73,7 +73,7 @@ h2
     font-weight: bold;
     font-style: italic;
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 #logo 
@@ -185,6 +185,7 @@ section#blog
 {
     float: left;
     margin-top: 0px;
+    padding:0px;
     text-align: left;
     font-family: "Brush Script MT", cursive;
 }
@@ -194,6 +195,8 @@ section#blog
     font-family: "Brush Script MT", cursive;
     margin-top: 0px;
     text-align: right;
+    float: right;
+    padding: 0px 5px ;
 }
 
 .time
@@ -284,12 +287,12 @@ aside table th
     position:fixed;
     bottom:0;
     clear: both;
-    padding: 5px;
+    padding: 0px;
     text-align: center;
     background-color: #BFD8D2;
     width: 100%;
     display: grid;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 }
 
 ul .gallery-list

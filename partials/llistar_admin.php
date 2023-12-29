@@ -10,8 +10,8 @@
             <th>Nombre Màxim d'Alumnes</th>
             <th>Places Vacants</th>
             <th>Preu Trimestre</th>
-            <th></th>
-            <th></th>    
+            <th>Nom Imatge</th>
+            <th>Ruta Imatge</th>    
             <th></th>
             <th></th>
         </tr>
@@ -50,5 +50,8 @@
             echo '</tr>';
         }
     ?>
+    </table>
+    
+    <table id="tabAlumnes">
     </table>
 </main>

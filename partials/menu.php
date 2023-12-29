@@ -13,10 +13,11 @@
                     echo '<li><a href="?action=list">Llistar</a></li>';
                 }          
 		?>  
+		<!--
 		<li>
 			<a href="?action=modify">Modificar</a>
 		</li>
-		<!-- <li>
+		<li>
 			<a href="../B_1/holaMundo.php">HolaMundo</a>
 		</li>
 		-->
@@ -39,7 +40,7 @@
 		    <a href="?action=afegirFoto">FormFoto</a>
 		</li>
 		<li>
-			<a href="?action=ahorcado">JocAhordado</a>
+			<a href="?action=ahorcado">JocAhorcado</a>
 		</li>
 		<li>
 			<a href="?action=quadrats">JocQuadrats</a>
