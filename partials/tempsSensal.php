@@ -1,5 +1,5 @@
 <aside id="weather-aside" class="temps">
-    <p>Tiempo en Castellón de la Plana</p>
+    <p>Temps en Castellón de la Plana</p>
     <table border="1">
         <tr  id="tmax">
             <th>Temp Max (ºC)</th>      
@@ -8,13 +8,13 @@
             <th>Temp Min (ºC)</th>
         </tr>
         <tr id="hmax">
-            <th>Humedad Max (%)</th>
+            <th>Humitat Max (%)</th>
         </tr>
         <tr id="hmin">
-            <th>Humedad Max (%)</th>
+            <th>Humitat Min (%)</th>
         </tr>
         <tr id="precip">
-            <th>Pob precipitación (mm)</th>
+            <th>Pob precipitació (mm)</th>
         </tr>
     </table>
     

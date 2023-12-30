@@ -14,6 +14,7 @@
             <th>Ruta Imatge</th>    
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     <?php
         foreach ($dic as $codi => $curs) 
@@ -47,6 +48,7 @@
             echo "<td> <button type='submit'>Modificar</button> </td>";
             echo '</form>';
             echo "<td> <a href='?action=borrar&curso=$codi' class='button'> <button>Borrar</button> </a> </td>";
+            echo "<td> <button class='alumnes' value=$codi>Alumnes</button> </td>";
             echo '</tr>';
         }
     ?>
@@ -54,4 +56,35 @@
     
     <table id="tabAlumnes">
     </table>
+    
+    <script>
+        let elementArray = document.querySelectorAll(".alumnes");
+        elementArray.forEach(function(elem)
+        {
+            elem.addEventListener('click', 
+            async function(event)
+            {   
+                event.preventDefault();
+                
+                const response = await fetch('http://localhost/EI1042/portal/portal.php?action=llistarAlumnes&pet=partial&curso='+elem.value, {method: 'GET', credentials: 'include'});
+                const res_llistat = await response.json();
+                console.log(res_llistat);
+                var taulaAlumnes = document.getElementById("tabAlumnes");
+                taulaAlumnes.innerHTML="";
+                for(var alumne in res_llistat)
+                {
+                    var codi = res_llistat[alumne][0];
+                    var nom = res_llistat[alumne][1];
+                    
+                    var fila = taulaAlumnes.insertRow(-1);
+                    var cell1 = fila.insertCell(0);
+                    var cell2 = fila.insertCell(1);
+                    
+                    cell1.innerHTML = codi;
+                    cell2.innerHTML = nom;
+                } 
+                console.log("")         
+            }); 
+        });
+    </script>
 </main>

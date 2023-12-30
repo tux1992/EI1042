@@ -65,6 +65,15 @@
                     echo json_encode(array('matricula'=>'incorrecta', 'mensaje' => $mensaje));    
                 }
                 break;
+            case "form_matricula":
+                readfile("form_mat_cursos.php"); 
+                break;
+            case "llistarAlumnes":
+                header('Content-Type: application/json; charset=utf-8');
+                $dic = carregar_dades("./recursos/matriculats.json");
+                $alumnes = $dic[$_REQUEST["curso"]];
+                echo json_encode($alumnes);
+                break;
             default:
                 echo json_encode(array('mensaje'=>'error'));
                 break;
@@ -116,7 +125,7 @@
                 case "matricula":
                     if(autorizacion() == "client")
                     {
-                        $central = "/partials/form_matricula.php";
+                        $central = "/partials/form_mat_cursos.php";
                     }
                     else
                     {
